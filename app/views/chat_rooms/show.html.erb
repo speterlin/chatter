@@ -1,0 +1,10 @@
+<h1><%= @chat_room.title %></h1>
+
+<div id="messages" data-chat-room-id="<%= @chat_room.id %>">
+  <%= render @chat_room.messages %>
+</div>
+
+<br/><br/>
+<%= form_for @message, url: '#', id: "new_message" do |f| %>
+<%= f.text_area :body, id: 'message_body' %>
+<% end %>
