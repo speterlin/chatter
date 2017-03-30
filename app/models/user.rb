@@ -28,7 +28,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :chat_rooms, dependent: :destroy
+  has_many :initiated_chat_rooms, class_name: 'ChatRoom', foreign_key: :initiator_id, dependent: :destroy
+  has_many :received_chat_rooms, class_name: 'ChatRoom', foreign_key: :recipient_id, dependent: :destroy
   has_many :sent_messages, :foreign_key => :sender_id, class_name: 'Message', dependent: :destroy
 
 end

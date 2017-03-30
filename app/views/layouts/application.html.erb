@@ -10,7 +10,14 @@
 
   <body>
     <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p>
+    <p class="alert"><%= alert %></p>
+    <% if flash %>
+        <% flash.each do |message_type, message| %>
+          <div class="flash-message">
+            <%= message %>
+          </div>
+        <% end %>
+    <% end %>
     <% if user_signed_in? %>
       Logged in as <strong><%= current_user.email %></strong>.
       <%= link_to 'Chats', chat_rooms_path, :class => 'navbar-link' %> |

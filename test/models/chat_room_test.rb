@@ -2,11 +2,14 @@
 #
 # Table name: chat_rooms
 #
-#  id         :integer          not null, primary key
-#  title      :string
-#  user_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :integer          not null, primary key
+#  title        :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  initiator_id :integer          not null
+#  recipient_id :integer          not null
+#  description  :text
+#  image        :string
 #
 
 require 'test_helper'

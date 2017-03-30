@@ -1,6 +1,6 @@
 <h1>Chat rooms</h1>
 
-<p class="lead"><%= link_to 'New chat room', new_chat_room_path %></p>
+<%= react_component('ChatRoomForm', {initiator_id: current_user.id}) %>
 
 <ul>
   <%= render @chat_rooms %>
